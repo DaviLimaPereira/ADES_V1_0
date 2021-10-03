@@ -11,31 +11,44 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">Projeto A.D.E.S.</a>
+            <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
       
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="#">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#">Agremiações</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#">Eventos</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#">Apuração</a>
-                    </li>
-                  </ul>
-              <div class="form-inline my-2 my-lg-0">
-                <a class="btn btn-outline-success my-2 my-sm-0" href="#">Login</a>
-              </div>
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Desativado</a>
+                </li>                    
+                </ul>
             </div>
-          </nav>
+            @guest
+            <div class="btn btn-outline-success my-2 my-sm-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register-user') }}">Register</a>
+                </li>
+                @else
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('signout') }}">Logout</a>
+                </li>
+            </div>
+            @endguest
+        </nav>
+
+        
         
         <main class="flex-shrink-0" role="main">
             @yield('conteudo')
