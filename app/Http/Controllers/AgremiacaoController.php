@@ -48,7 +48,7 @@ class AgremiacaoController extends Controller
      */
     public function show(Agremiacao $agremiacao)
     {
-        return view('agremiacao.show')->with('dep',$agremiacao);
+        return view('agremiacao.show')->with('d',$agremiacao);
     }
 
     /**
@@ -57,9 +57,9 @@ class AgremiacaoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Agremiacao $agremiacao)
     {
-        return View('agremiacao.edit')->with('dep',$departamento);
+        return View('agremiacao.edit')->with('d',$agremiacao);
     }
 
     /**

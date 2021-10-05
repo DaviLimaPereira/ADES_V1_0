@@ -3,20 +3,38 @@
 @section('cabeçalho','Agremiações - Cadastro')
 @section('conteudo')
 <div class="col-md-6">
-<form method="POST">
-  <div class="form-group">
-    <label for="InputName">Endereço de email</label>
-    <input type="name" class="form-control" id="InputName" aria-describedby="emailHelp" placeholder="Agremiação">
+  <form action="/agremiacao" method="post">
+    @csrf  <!-- token de segurança -->
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" class="form-control" value="{{old('nome')}}"/>
+        @if($errors->has('nome'))
+        <p class="text-danger">{{$errors->first('nome')}}</p>
+        @endif
+    </div>
+    <div>
+        <label for="nomecompleto">Nome Completo</label>
+        <input type="text" name="nomecompleto" id="nomecompleto" class="form-control" value="{{old('nomecompleto')}}"/>
+        @if($errors->has('nomecompleto'))
+        <p class="text-danger">{{$errors->first('nomecompleto')}}</p>
+        @endif
+    </div>
+    <div>
+        <label for="fundacao">Data de Fundação</label>
+        <input type="text" name="fundacao" id="fundacao" class="form-control" value="{{old('fundacao')}}"/>
+        @if($errors->has('fundacao'))
+        <p class="text-danger">{{$errors->first('fundacao')}}</p>
+        @endif
+    </div>
+    <div>
+      <label for="descricao">Data de Fundação</label>
+      <textarea name="descricao" id="descricao" cols="30" rows="10" class="form-control" value="{{old('descricao')}}"></textarea>
+      @if($errors->has('descricao'))
+      <p class="text-danger">{{$errors->first('descricao')}}</p>
+      @endif
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Senha</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Enviar</button>
+    <input type="submit" value="Criar" class="btn btn-primary btn-sm"/>
+    <a href="/agremiacao" class="btn btn-primary btn-sm">Voltar</a>
 </form>
 </div>
 @endsection

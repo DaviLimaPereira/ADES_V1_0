@@ -30,20 +30,12 @@
                 </ul>
             </div>
             @guest
-            <div class="btn btn-outline-success my-2 my-sm-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register-user') }}">Register</a>
-                </li>
+            <div class="my-2 my-sm-0">
+                    <a class="btn btn-outline-success" href="{{ route('login') }}">Login</a>
+                    <a class="btn btn-outline-primary" href="{{ route('register-user') }}">Register</a>
                 @else
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('signout') }}">Logout</a>
-                </li>
+                    <a class="btn btn-outline-success" href="{{ route('dashboard') }}">Dashboard</a>
+                    <a class="btn btn-outline-danger" href="{{ route('signout') }}">Logout</a>
             </div>
             @endguest
         </nav>
