@@ -18,11 +18,11 @@
       
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home</a>
+                <li class="nav-item">
+                  <a class="@yield('home')" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/agremiacao">Agremiação</a>
+                  <a class="@yield('agremiacao')" href="/agremiacao">Agremiação</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link disabled" href="#">Desativado</a>

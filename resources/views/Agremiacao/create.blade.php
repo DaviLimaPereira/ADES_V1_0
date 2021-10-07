@@ -1,7 +1,11 @@
 @extends('master');
 @section('titulo','WinTECH - Agremiações')
-@section('cabeçalho','Agremiações - Cadastro')
+@section('home','nav-link')
+@section('agremiacao','nav-link active')
 @section('conteudo')
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Agremiação - Cadastro</h1>
+</div>
 <div class="col-md-6">
   <form action="/agremiacao" method="post">
     @csrf  <!-- token de segurança -->
@@ -12,21 +16,21 @@
         <p class="text-danger">{{$errors->first('nome')}}</p>
         @endif
     </div>
-    <div>
+    <div class="form-group">
         <label for="nomecompleto">Nome Completo</label>
         <input type="text" name="nomecompleto" id="nomecompleto" class="form-control" value="{{old('nomecompleto')}}"/>
         @if($errors->has('nomecompleto'))
         <p class="text-danger">{{$errors->first('nomecompleto')}}</p>
         @endif
     </div>
-    <div>
+    <div class="form-group">
         <label for="fundacao">Data de Fundação</label>
         <input type="text" name="fundacao" id="fundacao" class="form-control" value="{{old('fundacao')}}"/>
         @if($errors->has('fundacao'))
         <p class="text-danger">{{$errors->first('fundacao')}}</p>
         @endif
     </div>
-    <div>
+    <div class="form-group">
       <label for="descricao">Data de Fundação</label>
       <textarea name="descricao" id="descricao" cols="30" rows="10" class="form-control" value="{{old('descricao')}}"></textarea>
       @if($errors->has('descricao'))

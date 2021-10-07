@@ -1,5 +1,7 @@
 @extends('master');
 @section('titulo','WinTECH - Agremiações')
+@section('home','nav-link')
+@section('agremiacao','nav-link active')
 @section('conteudo')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">{{$d->nome}} - Editar</h1>
@@ -30,7 +32,7 @@
         @endif
     </div>
     <div class="form-group">
-      <label for="descricao">Data de Fundação</label>
+      <label for="descricao">Descrição</label>
       <textarea name="descricao" id="descricao" cols="30" rows="10" class="form-control" value="{{(empty(old('descricao')))?$d->descricao:old('descricao')}}"></textarea>
       @if($errors->has('descricao'))
       <p class="text-danger">{{$errors->first('descricao')}}</p>

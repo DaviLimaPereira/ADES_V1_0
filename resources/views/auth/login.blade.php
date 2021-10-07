@@ -1,6 +1,7 @@
 @extends('master')
 @section('titulo','WinTECH - LOGIN')
-@section('cabeçalho')
+@section('home','nav-link')
+@section('agremiacao','nav-link')
 @section('conteudo')
 <div class="cotainer">
     <div class="row justify-content-center">

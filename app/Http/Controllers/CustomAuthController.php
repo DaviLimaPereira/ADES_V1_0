@@ -65,7 +65,7 @@ class CustomAuthController extends Controller
     public function dashboard()
     {
         if(Auth::check()){
-            return view('principal');
+            return view('Admin.dashboard');
         }
   
         return redirect("login")->withSuccess('You are not allowed to access');
@@ -76,6 +76,6 @@ class CustomAuthController extends Controller
         Session::flush();
         Auth::logout();
   
-        return Redirect('login');
+        return Redirect('/');
     }
 }
