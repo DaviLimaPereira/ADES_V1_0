@@ -48,7 +48,7 @@ class AgremiacaoController extends Controller
      */
     public function show(Agremiacao $agremiacao)
     {
-        return view('agremiacao.show')->with('d',$agremiacao);
+        return view('Agremiacao.show')->with('d',$agremiacao);
     }
 
     /**
