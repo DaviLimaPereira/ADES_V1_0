@@ -15,7 +15,7 @@ class AgremiacaoController extends Controller
     public function index()
     {
         $listagem = Agremiacao::all();
-        return view('agremiacao.list')->with('NomeVarView',$listagem);
+        return view('Agremiacao.list')->with('NomeVarView',$listagem);
     }
 
     /**
