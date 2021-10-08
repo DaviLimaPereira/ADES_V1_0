@@ -36,6 +36,7 @@
 
                         <div class="d-grid mx-auto">
                             <button type="submit" class="btn btn-dark btn-block">Signin</button>
+                            <a class="btn btn-outline-primary" href="{{ route('register-user') }}">Register</a>
                         </div>
                     </form>
 

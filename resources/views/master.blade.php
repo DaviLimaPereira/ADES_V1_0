@@ -11,7 +11,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand" href="#">Projeto A.D.E.S.</a>
+            <a class="navbar-brand" href="{{ route('login') }}">Projeto A.D.E.S.</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,8 +31,6 @@
             </div>
             @guest
             <div class="my-2 my-sm-0">
-                    <a class="btn btn-outline-success" href="{{ route('login') }}">Login</a>
-                    <a class="btn btn-outline-primary" href="{{ route('register-user') }}">Register</a>
                 @else
                     <a class="btn btn-outline-success" href="{{ route('dashboard') }}">Dashboard</a>
                     <a class="btn btn-outline-danger" href="{{ route('signout') }}">Logout</a>
